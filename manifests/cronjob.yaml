@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: hello
+  name: backup-job-1
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -9,7 +9,7 @@ spec:
       template:
         spec:
           containers:
-          - name: hello
+          - name: backup-job
             image: busybox
             imagePullPolicy: IfNotPresent
             command:
