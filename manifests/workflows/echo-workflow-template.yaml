@@ -9,6 +9,7 @@ metadata:
     workflows.argoproj.io/version: '>= 2.9.0'
   name: echo
 spec:
+  entrypoint: echo
   templates:
   - name: echo
     inputs:
