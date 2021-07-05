@@ -1,24 +1,4 @@
 apiVersion: argoproj.io/v1alpha1
-kind: WorkflowTemplate
-metadata:
-  annotations:
-    workflows.argoproj.io/description: This is a basic catalog example that simply
-      prints "hello argo!".
-    workflows.argoproj.io/maintainer: '@alexec'
-    workflows.argoproj.io/tags: example
-    workflows.argoproj.io/version: '>= 2.9.0'
-  name: echo
-spec:
-  templates:
-  - name: echo
-    inputs:
-      parameters:
-      - name: message
-    container:
-      image: alpine:3.13
-      command: [echo, "{{inputs.parameters.message}}"]
----
-apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   name: dag-diamond
